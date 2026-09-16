@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+cache/
+*.png
+!models/denmark/dk_final.png
+!models/denmark/dk_shocks.png
+models/denmark/dk_final.csv
