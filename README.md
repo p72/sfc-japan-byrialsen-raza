@@ -50,6 +50,12 @@ python models/denmark/estimate.py
 朴勝俊（2025）「日本版 SFC マクロ計量モデル」（関西学院大学経済学部ワーキング
 ペーパー）の変数表にならった。
 
+## ライセンス
+
+コードは MIT License（`LICENSE`）。`japan_*_fy.csv` は内閣府・総務省・厚生労働省・
+経済産業省の公表統計（政府標準利用規約 2.0）と IMF World Economic Outlook を
+加工したもので、利用するときは上の出典を明記すること。
+
 ## 参考文献
 
 - Byrialsen, M. R. and H. Raza (2020) "An Empirical Stock-Flow Consistent Macroeconomic Model for Denmark", Levy Economics Institute Working Paper No. 942.
