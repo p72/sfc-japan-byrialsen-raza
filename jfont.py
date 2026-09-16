@@ -15,6 +15,8 @@ CANDIDATES = [
     "Hiragino Sans",    # Mac
     "Noto Sans CJK JP", # Linux（fonts-noto-cjk）
     "IPAexGothic",      # Linux（fonts-ipafont）
+    "IPAGothic",        # Linux（fonts-ipafont-gothic。IPAexGothic とは別名で登録される）
+    "IPAPGothic",       # Linux（fonts-ipafont-gothic。プロポーショナル版）
     "TakaoGothic",      # Linux（fonts-takao）
 ]
 
