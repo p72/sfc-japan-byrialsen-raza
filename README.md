@@ -42,6 +42,26 @@ python models/denmark/aggregate.py
 python models/denmark/estimate.py
 ```
 
+### ネットワークの許可ドメイン
+
+`fetch_*.py` が外に出るのは下のホストだけ。Claude Code on the web のようにアウトバウンドを
+許可リストで絞る環境では、これらを許可しておく（`cache/` に落としてあれば 2回目以降は
+不要）。`fetch_endo.py`・`fetch_fincome.py`・`fetch_resid.py` と `models/denmark/` 以下は
+ネットワークに出ない。
+
+| ホスト | 使うスクリプト | 取るもの |
+|---|---|---|
+| `www.esri.cao.go.jp` | `fetch_ff.py` `fetch_sector.py`（`fetch_misc.py` も `fetch_sector` 経由で読む） | 内閣府「国民経済計算年次推計」の Excel（資金循環・制度部門別勘定・実物側） |
+| `www.e-stat.go.jp` | `fetch_misc.py` | 毎月勤労統計「指数累積データ」（労働時間）、労働力調査の CSV |
+| `dashboard.e-stat.go.jp` | `fetch_misc.py` | 統計ダッシュボード API（鉱工業指数・稼働率、月次。キー不要） |
+| `www.stat-search.boj.or.jp` | `fetch_misc.py` | 日本銀行 時系列統計データ API（名目実効為替レート） |
+| `api.db.nomics.world` | `fetch_misc.py` | IMF WEO 2024年10月版の世界実質GDP成長率（DBnomics のミラー。第1候補） |
+| `www.imf.org` | `fetch_misc.py` | IMF DataMapper（DBnomics に届かないときの代替） |
+| `api.worldbank.org` | `fetch_misc.py` | 世界銀行 PPP ベース世界GDP（IMF にも届かないときの代替） |
+| `fred.stlouisfed.org` | `fetch_misc.py` | 米国10年国債利回り（FRED、CSV） |
+
+依存パッケージを入れるときは、これに加えて `pypi.org` と `files.pythonhosted.org` が要る。
+
 ## データの出典
 
 内閣府「国民経済計算年次推計」（2023年度確報）、総務省「労働力調査」、厚生労働省

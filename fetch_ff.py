@@ -43,8 +43,7 @@ FY = 2023                        # 確報の対象年度。ここがデータセ
 #
 # 朴(2025c)/(2026a)/(2026) WP65 はいずれも「2023年度国民経済計算」を使っている。
 # 論文とデータの版まで揃えている。
-# 上げ下げするときは、このリポジトリのすべての数字を作り直して照合し直すこと
-# （AGENTS.md の「数字を報告するときの作法」）。
+# 上げ下げするときは、このリポジトリのすべての数字を作り直して照合し直すこと。
 BASE = ("https://www.esri.cao.go.jp/jp/sna/data/data_list/kakuhou/files/"
         "%d/tables/" % FY)
 CACHE = os.path.join(os.path.dirname(os.path.abspath(__file__)), "cache")

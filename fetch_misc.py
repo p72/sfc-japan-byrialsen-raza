@@ -487,8 +487,8 @@ def main():
         print("   欠測 %-8s %d年度分 %s" % (c, len(yrs), yrs[:8]))
     print("   全系列に欠測が無いか: %s" % ("OK" if not miss else "欠測あり"))
     if miss:
-        # 欠測入りの CSV を書くと、後続の fetch_*.py と park_check.py が
-        # それを読んでしまう。前回の正常な CSV を残したまま失敗で止める。
+        # 欠測入りの CSV を書くと、後続の fetch_*.py がそれを読んでしまう。
+        # 前回の正常な CSV を残したまま失敗で止める。
         fail.append("欠測: " + ", ".join(miss))
 
     if not fail:
